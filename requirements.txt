@@ -1,0 +1,7 @@
+PyQt6==6.7.0
+customtkinter==5.2.2 ; si tu veux un look moderne
+SQLAlchemy==2.0.35
+python-escpos==4.0.0
+bcrypt==4.2.0
+loguru==0.7.2
+Pillow==10.4.0  # pour les images produits
