@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+venv/
+.env
+*.db
+static/images/*.png
+!static/images/placeholder.png
