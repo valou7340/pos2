@@ -1,0 +1,58 @@
+restaurant_pos/
+│
+├── main.py                          # Point d'entrée de lancement de l'application
+├── config/
+│   ├── settings.py                  # Paramètres globaux (taxes, devise, imprimante, etc.)
+│   └── database.py                  # Configuration de la base de données (SQLite par défaut)
+│
+├── database/
+│   ├── __init__.py
+│   ├── models.py                    # Modèles SQLAlchemy ou Peewee (Table, Product, Order, etc.)
+│   ├── migrations/                  # Si tu utilises Alembic ou autre
+│   └── seed_data.py                 # Données de départ (catégories, produits exemples)
+│
+├── core/
+│   ├── __init__.py
+│   ├── cart.py                      # Panier actuel (Order en cours)
+│   ├── order_manager.py             # Gestion des commandes (ajout, modification, paiement)
+│   ├── payment.py                   # Méthodes de paiement (espèces, CB, tickets resto, etc.)
+│   ├── printer.py                   # Impression ticket thermique (escpos ou python-escpos)
+│   └── tax_calculator.py            # Calcul des TVA selon catégorie produit
+│
+├── models/
+│   ├── __init__.py
+│   ├── category.py                  # Catégorie de produits (Entrées, Plats, Boissons...)
+│   ├── product.py                   # Produit (nom, prix HT/TTC, catégorie, image, raccourci clavier)
+│   ├── order.py                     # Commande en cours ou terminée
+│   ├── order_item.py                # Ligne de commande
+│   └── payment.py                   # Paiement associé à une commande
+│
+├── ui/
+│   ├── __init__.py
+│   ├── main_window.py               # Fenêtre principale (grille de boutons produits + panier)
+│   ├── login_window.py              # Écran de connexion employé (code PIN)
+│   ├── admin_panel.py               # Gestion produits, catégories, employés
+│   └── components/
+│       ├── product_button.py        # Bouton produit personnalisé
+│       └── cart_table.py            # Tableau du panier
+│
+├── utils/
+│   ├── __init__.py
+│   ├── logger.py                    # Logging propre
+│   ├── security.py                  # Hash des PIN employés, etc.
+│   └── helpers.py                   # Fonctions utilitaires (format prix, date, etc.)
+│
+├── static/
+│   ├── images/                      # Images des produits
+│   ├── icons/
+│   └── styles/                      # Fichiers CSS si Qt
+│
+├── tests/
+│   ├── __init__.py
+│   ├── test_cart.py
+│   ├── test_payment.py
+│   └── test_models.py
+│
+├── requirements.txt                 # Dépendances
+├── README.md
+└── .gitignore
